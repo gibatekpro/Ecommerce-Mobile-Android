@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".checkout.activity.CheckoutActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/Theme.EcommerceAndroid.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/checkout_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/Theme.EcommerceAndroid.PopupOverlay" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/personal_info" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <EditText
+                            android:id="@+id/firstNameTextField"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:layout_marginBottom="5dp"
+                            android:autofillHints=""
+                            android:background="@drawable/border_edit_text"
+                            android:hint="@string/first_name"
+                            android:inputType="text"
+                            android:padding="5dp"
+                            android:textColor="@android:color/black" />
+
+                        <EditText
+                            android:id="@+id/lastNameTextField"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:layout_marginBottom="5dp"
+                            android:autofillHints=""
+                            android:background="@drawable/border_edit_text"
+                            android:hint="@string/last_name"
+                            android:inputType="text"
+                            android:padding="5dp"
+                            android:textColor="@android:color/black" />
+
+                        <EditText
+                            android:id="@+id/emailTextField"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:layout_marginBottom="5dp"
+                            android:autofillHints=""
+                            android:background="@drawable/border_edit_text"
+                            android:hint="@string/email"
+                            android:inputType="textEmailAddress"
+                            android:padding="5dp"
+                            android:textColor="@android:color/black" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/shipping_address" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <EditText
+                            android:id="@+id/shipStreetField"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:layout_marginBottom="5dp"
+                            android:autofillHints=""
+                            android:background="@drawable/border_edit_text"
+                            android:hint="@string/street"
+                            android:inputType="text"
+                            android:padding="5dp"
+                            android:textColor="@android:color/black" />
+
+                        <EditText
+                            android:id="@+id/shipCityField"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:layout_marginBottom="5dp"
+                            android:autofillHints=""
+                            android:background="@drawable/border_edit_text"
+                            android:hint="@string/city"
+                            android:inputType="text"
+                            android:padding="5dp"
+                            android:textColor="@android:color/black" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:hint="@string/select_country"
+                            android:layout_marginBottom="5dp"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+
+                            <AutoCompleteTextView
+                                android:id="@+id/shipCountry"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="5dp"
+                                android:background="@drawable/border_edit_text"
+                                android:inputType="none"
+                                />
+
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:hint="@string/select_state"
+                            android:layout_marginBottom="5dp"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+
+                            <AutoCompleteTextView
+                                android:id="@+id/shipState"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="5dp"
+                                android:background="@drawable/border_edit_text"
+                                android:inputType="none"
+                                />
+
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <EditText
+                            android:id="@+id/shipZipCodeField"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:layout_marginBottom="5dp"
+                            android:autofillHints=""
+                            android:background="@drawable/border_edit_text"
+                            android:hint="@string/zip_code"
+                            android:inputType="number"
+                            android:padding="5dp"
+                            android:textColor="@android:color/black" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/copyAddressCheckBox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/copy_bill_to_ship" />
+
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp" />
+
+
+                <LinearLayout
+                    android:id="@+id/billLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/billing_address" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <EditText
+                            android:id="@+id/billStreetField"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:layout_marginBottom="5dp"
+                            android:autofillHints=""
+                            android:background="@drawable/border_edit_text"
+                            android:hint="@string/street"
+                            android:inputType="text"
+                            android:padding="5dp"
+                            android:textColor="@android:color/black" />
+
+                        <EditText
+                            android:id="@+id/billCityField"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:layout_marginBottom="5dp"
+                            android:autofillHints=""
+                            android:background="@drawable/border_edit_text"
+                            android:hint="@string/city"
+                            android:inputType="text"
+                            android:padding="5dp"
+                            android:textColor="@android:color/black" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:hint="@string/select_country"
+                            android:layout_marginBottom="5dp"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+
+                            <AutoCompleteTextView
+                                android:id="@+id/billCountry"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="5dp"
+                                android:background="@drawable/border_edit_text"
+                                android:inputType="none"
+                                />
+
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:hint="@string/select_state"
+                            android:layout_marginBottom="5dp"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+
+                            <AutoCompleteTextView
+                                android:id="@+id/billState"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="5dp"
+                                android:background="@drawable/border_edit_text"
+                                android:inputType="none"
+                                />
+
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                        <EditText
+                            android:id="@+id/billZipCodeField"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:layout_marginBottom="5dp"
+                            android:autofillHints=""
+                            android:background="@drawable/border_edit_text"
+                            android:hint="@string/zip_code"
+                            android:inputType="number"
+                            android:padding="5dp"
+                            android:textColor="@android:color/black" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/submitButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/submit"
+                android:theme="@style/Theme.EcommerceAndroid.Button" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

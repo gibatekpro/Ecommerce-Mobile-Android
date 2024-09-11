@@ -1,0 +1,126 @@
+plugins {
+    id 'com.android.application'
+//    id 'dagger.hilt.android.plugin'
+//    id 'kotlin-android'
+//    id 'kotlin-kapt'
+}
+
+android {
+    namespace 'com.gibatekpro.ecommerceandroid'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.gibatekpro.ecommerceandroid"
+        minSdk 26
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+        defaultConfig {
+            // Rest of your configuration
+            javaCompileOptions {
+                annotationProcessorOptions {
+                    arguments += [
+                            'room.schemaLocation': "$projectDir/schemas".toString()
+                    ]
+                }
+            }
+        }
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_16
+        targetCompatibility JavaVersion.VERSION_16
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+//For Paging
+    def paging_version = "3.1.1"
+
+    implementation "androidx.paging:paging-runtime-ktx:$paging_version"
+    // For Kotlin use paging-runtime-ktx
+
+    // alternatively - without Android dependencies for testing
+    testImplementation "androidx.paging:paging-common-ktx:$paging_version"
+    // For Kotlin use paging-common-ktx
+
+    // optional - RxJava support
+    implementation "androidx.paging:paging-rxjava3:$paging_version"
+    // For Kotlin use paging-rxjava2-ktx
+
+    // Retrofit library dependency
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    // Gson Library dependency for json to object conversion
+    implementation 'com.google.code.gson:gson:2.9.0'
+    // Gson support adapter for Retrofit
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+
+    implementation 'com.squareup.retrofit2:adapter-rxjava3:2.9.0'
+    // Optional - Okhttp logging library for debug purpose
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.9.0'
+
+    //Dagger hilt
+    implementation 'com.google.dagger:hilt-android:2.33-beta'
+//    kapt 'com.google.dagger:hilt-compiler:2.33-beta'
+
+
+    // Stripe Android SDK
+    implementation 'com.stripe:stripe-android:20.25.7'
+
+// https://mvnrepository.com/artifact/com.github.kittinunf.fuel/fuel
+    implementation 'com.github.kittinunf.fuel:fuel:2.3.1'
+
+
+    //For Api calls
+    implementation 'com.android.volley:volley:1.2.1'
+    //For Image loading
+    implementation 'com.github.bumptech.glide:glide:4.15.1'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.15.1'
+
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.preference:preference:1.2.0'
+
+    constraints {
+        implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.0") {
+            because("kotlin-stdlib-jdk7 is now a part of kotlin-stdlib")
+        }
+        implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.0") {
+            because("kotlin-stdlib-jdk8 is now a part of kotlin-stdlib")
+        }
+    }
+
+    // Room components
+    implementation "androidx.room:room-runtime:$rootProject.roomVersion"
+    annotationProcessor "androidx.room:room-compiler:$rootProject.roomVersion"
+    androidTestImplementation "androidx.room:room-testing:$rootProject.roomVersion"
+    // https://mvnrepository.com/artifact/org.projectlombok/lombok
+    annotationProcessor 'org.projectlombok:lombok:1.18.28'
+
+
+    // Lifecycle components
+    implementation "androidx.lifecycle:lifecycle-viewmodel:$rootProject.lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-livedata:$rootProject.lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-common-java8:$rootProject.lifecycleVersion"
+
+
+    //These imports result in a conflict. So, comment them out.
+//    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.6.1'
+//    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1'
+    implementation 'androidx.navigation:navigation-fragment:2.5.3'
+    implementation 'androidx.navigation:navigation-ui:2.5.3'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+}

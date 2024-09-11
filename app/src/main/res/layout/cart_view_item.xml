@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/productCard"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:clickable="true"
+    android:focusable="true">
+
+
+    <LinearLayout
+        android:id="@+id/lay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/thumbnail"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_weight="2"
+            android:layout_margin="0dp"
+            android:contentDescription="@string/thumbnail"
+            app:srcCompat="@drawable/dice_1"
+            tools:srcCompat="@drawable/dice_1" />
+
+        <LinearLayout
+            android:id="@+id/large_lay"
+            android:layout_width="0dp"
+            android:layout_weight="4"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp">
+
+                <TextView
+                    android:id="@+id/cartItemName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="2"
+                    android:textColor="@color/grey_700"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    tools:text="@string/product_name_dummy" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp" />
+
+                <TextView
+                    android:id="@+id/cartItemPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="3"
+                    android:textColor="@color/grey_700"
+                    android:textSize="13sp"
+                    tools:text="@string/product_unit_price" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp" />
+
+                <TextView
+                    android:id="@+id/cartItemStock"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/grey_700"
+                    android:textSize="13sp"
+                    tools:text="@string/product_unit_price" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp" />
+
+                <TextView
+                    android:id="@+id/cartItemSubtotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/grey_700"
+                    android:textSize="13sp"
+                    tools:text="Subtotal: " />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/end_lay"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start|bottom"
+                android:orientation="horizontal">
+
+
+                <ImageButton
+                    android:id="@+id/minusButton"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:contentDescription="@string/delete_item"
+                    android:src="@drawable/baseline_minus_box_blue_24"
+                    app:srcCompat="@drawable/baseline_minus_box_blue_24" />
+
+                <Space
+                    android:layout_width="30dp"
+                    android:layout_height="24dp" />
+
+                <TextView
+                    android:id="@+id/cartItemQuantity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    tools:text="2" />
+
+                <Space
+                    android:layout_width="30dp"
+                    android:layout_height="24dp" />
+
+                <ImageButton
+                    android:id="@+id/addButton"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:contentDescription="@string/delete_item"
+                    android:src="@drawable/baseline_add_box_blue_24"
+                    app:srcCompat="@drawable/baseline_add_box_blue_24" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="end|top"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/deleteButton"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:contentDescription="@string/delete_item"
+            android:src="@drawable/baseline_delete_outline_red_light_24"
+            app:srcCompat="@drawable/baseline_delete_outline_red_light_24" />
+
+    </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>
